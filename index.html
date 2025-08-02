@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+        <div class="head">
+            <p>JEDDAH <span style="color: red;padding-left: 5px;">I</span></p>
+            <p>By Dr: Mohamed Abu Elatta</p>
+        </div>
+        <div class="items_div">
+            <label><input type="checkbox" class="element" value="بوتاسيوم"> بوتاسيوم</label><br>
+            <label><input type="checkbox" class="element" value="كالسيوم"> كالسيوم</label><br>
+            <label><input type="checkbox" class="element" value="مغنيسيوم"> مغنيسيوم</label><br>
+            <label><input type="checkbox" class="element" value="انزيم الكبد">انزيم الكبد</label><br>
+            <label><input type="checkbox" class="element" value="صورة دم كاملة">صورة دم كاملة</label><br>
+            <label><input type="checkbox" class="element" value="كوليسترول">كوليسترول</label><br>
+            <label><input type="checkbox" class="element" value="كرياتينين">كرياتينين</label><br>
+            <label><input type="checkbox" class="element" value="حمض اليوريك">حمض اليوريك</label><br>
+            <label><input type="checkbox" class="element" value="بولينا الدم">بولينا الدم</label><br>
+            <label><input type="checkbox" class="element" value="فيتامين د">فيتامين د</label><br>
+            <label><input type="checkbox" class="element" value="الغدة الدرقية">الغدة الدرقية</label><br>
+            <label><input type="checkbox" class="element" value="مخزون الحديد">مخزون الحديد</label><br>
+            <label><input type="checkbox" class="element" value="البروستاتا">البروستاتا</label><br>
+            <label><input type="checkbox" class="element" value="السكر التراكمي">السكر التراكمي</label><br>
+            <label><input type="checkbox" class="element" value="سكر عشوائي">سكر عشوائي</label><br>
+            <label><input type="checkbox" class="element" value="البرولاكتين">البرولاكتين</label><br>
+            <label><input type="checkbox" class="element" value="هرمون الذكورة">هرمون الذكورة</label><br>
+            <label><input type="checkbox" class="element" value="نسبة الحديد">نسبة الحديد</label><br>
+            <label><input type="checkbox" class="element" value="الفوسفور">الفوسفور</label><br>
+            <label><input type="checkbox" class="element" value="الدهون الكاملة">الدهون الكاملة</label><br>
+            <label><input type="checkbox" class="element" value="تحليل بول بالكامل">تحليل بول بالكامل</label><br>
+            <label><input type="checkbox" class="element" value="سرعة الترسيب">سرعة الترسيب</label><br>
+            <label><input type="checkbox" class="element" value="البروتين التفاعلي">البروتين التفاعلي</label><br>
+            <label><input type="checkbox" class="element" value="صوديوم"></label>صوديوم<br>
+            <label><input type="checkbox" class="element" value="الغدة الدرقية الحر ٣">الغدة الدرقية الحر (3)</label><br>
+            <label><input type="checkbox" class="element" value="الغدة الدرقية الحر ٤">الغدة الدرقية الحر (4)</label><br>
+            <label><input type="checkbox" class="element" value="فيتامين ب ١٢">فيتامين ب١٢</label><br>
+            <label><input type="checkbox" class="element" value="كلورايد">كلورايد</label><br>
+            <label><input type="checkbox" class="element" value="تحليل الدهون الثلاثية">تحليل الدهون الثلاثية</label><br>
+            <label><input type="checkbox" class="element" value="زنك">زنك</label><br>
+            <label><input type="checkbox" class="element" value="وظائف الكبد">وظائف الكبد</label><br>
+            <label><input type="checkbox" class="element" value="انزيم الكبد">انزيم الكبد</label><br>
+    </div>
+
+
+    <div class="showw">
+        <button onclick="filterAnalyses()" class="show">عرض التحاليل</button>
+    </div>
+    
+    <div class="result" id="result"></div>
+    
+    <script>
+    const analyses = {
+        "باقة متابعة الغدة الدرقية مع ابر التخسيس": ["الغدة الدرقية"],
+        "صحة الرجل": ["انزيم الكبد", "كوليسترول", "صورة دم كاملة","كرياتينين","حمض اليوريك","بولينا الدم","فيتامين د","الغدة الدرقية","مخزون الحديد","البروستاتا","السكر التراكمي","سكر عشوائي","البرولاكتين","هرمون الذكورة"],
+        "صحة المرأة": ["انزيم الكبد", "كالسيوم", "صورة دم كاملة", "كوليسترول", "كرياتينين", "حمض اليوريك","فيتامين د","الغدة الدرقية","مخزون الحديد","السكر التراكمي","البرولاكتين"],
+        "الطفل": ["صورة دم كاملة", "نسبة الحديد", "مخزون الحديد", "سكر عشوائي", "فيتامين د", "انزيم الكبد","كرياتينين","الغدة الدرقية","كالسيوم","الفوسفور","مغنيسيوم"],
+        "تطمن": ["كالسيوم", "صورة دم كاملة", "الدهون الكاملة", "تحليل بول بالكامل", "كرياتينين", "حمض اليوريك","بولينا الدم","فيتامين د","الغدة الدرقية","مخزون الحديد","السكر التراكمي","سكر عشوائي","سرعة الترسيب","البروتين التفاعلي","صوديوم","بوتاسيوم","الغدة الدرقية الحر ٣","الغدة الدرقية الحر ٤","وظائف الكبد","نسبة الحديد","فيتامين ب ١٢","مغنيسيوم"],
+        "تحكم": ["انزيم الكبد", "كالسيوم", "صورة دم كاملة", "كرياتينين", "الدهون الكاملة", "تحليل بول بالكامل","حمض اليوريك","بولينا الدم","فيتامين د","الغدة الدرقية","مخزون الحديد","السكر التراكمي","سكر عشوائي","سرعة الترسيب","البروتين التفاعلي"],
+        "صحتي": ["انزيم الكبد", "صورة دم كاملة", "كوليسترول", "تحليل الدهون الثلاثية", "كرياتينين", "حمض اليوريك","السكر التراكمي","سكر عشوائي"],
+        "فيتامينات و معادن": ["فيتامين د", "فيتامين ب ١٢", "كالسيوم", "حمض اليوريك", "صوديوم", "بوتاسيوم","نسبة الحديد","مغنيسيوم"],
+        "ابر التخسيس": ["صورة دم كاملة", "كرياتينين", "انزيم الكبد", "مخزون الحديد", "الغدة الدرقية", "السكر التراكمي","نسبة الحديد","فيتامين د"],
+        "العناية بالشعر": ["فيتامين د", "الغدة الدرقية", "مخزون الحديد", "زنك", "صورة دم كاملة"],
+        "صفاء": ["انزيم الكبد", "صورة دم كاملة", "كوليسترول", "تحليل الدهون الثلاثية"],
+    };
+    
+    function filterAnalyses() {
+        const checkboxes = document.querySelectorAll('.element:checked');
+        const selectedElements = Array.from(checkboxes).map(cb => cb.value);
+        const resultDiv = document.getElementById('result');
+        resultDiv.innerHTML = '';
+    
+        for (const [category, elements] of Object.entries(analyses)) {
+            const matches = selectedElements.every(el => elements.includes(el));
+            if (matches) {
+                const categoryDiv = document.createElement('div');
+                categoryDiv.textContent = category;
+                resultDiv.appendChild(categoryDiv);
+            }
+        }
+    
+        if (resultDiv.innerHTML === '') {
+            resultDiv.textContent = 'لا توجد تحاليل متطابقة مع الاختيارات.';
+        }
+
+
+    }
+    </script>
+    </body>
+    </html>
+</body>
+</html>

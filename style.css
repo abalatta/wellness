@@ -1,0 +1,50 @@
+.items_div{    
+        display: grid;
+        grid-template-columns: repeat(8, 1fr); /* 4 أعمدة */
+        gap: 10px; /* المسافة بين الأعمدة */
+        border: 1px solid black;
+        padding: 20px ;
+        background-color: aliceblue;
+    }
+
+
+    .showw{
+        height: 10vh;
+        display: flex;
+        justify-content: center; /* يحط الزرار في النص أفقي */
+        margin: 0;
+        padding: 20px ;
+
+    }
+
+
+    button {
+        width: 300px;    
+    }
+
+
+    body{
+        background-color: black;
+    }
+    
+
+
+    .result{
+        display: grid;
+        grid-template-columns: repeat(8, 1fr); /* 4 أعمدة */
+        gap: 10px; /* المسافة بين الأعمدة */
+        border: 1px solid black;
+        padding: 20px ;
+        background-color: aliceblue;
+        height: 180px;
+    }
+
+
+    .head{
+        height: 40px;
+        display: flex;
+        justify-content:space-between;
+        color: white;
+        padding: 0px 10px;
+    }
+
